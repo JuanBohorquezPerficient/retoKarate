@@ -1,7 +1,7 @@
-08:15:03.381 karate.env system property was:  
-08:15:24.449 [print] Title ===>  ToolsQA
-river, defaulting to 'chrome'
-2.337 [print] Title ===>  ToolsQA
+14:39:55.074 karate.env system property was:  
+14:39:55.152 preferred port 4444 not available, will use: 54176
+14:40:04.993 [print] Title ===>  ToolsQA
+QA
 17:38:15.514 assertion failed: path: $, actual: '{"stacktrace":"Backtrace:\n\tOrdinal0 [0x0024C0A3+2212003]\n\tOrdinal0 [0x001E2CC1+1780929]\n\tOrdinal0 [0x000F465D+804445]\n\tOrdinal0 [0x000E7ACE+752334]\n\tOrdinal0 [0x000E65C8+746952]\n\tOrdinal0 [0x000E681D+747549]\n\tOrdinal0 [0x000E5FC5+745413]\n\tOrdinal0 [0x000EDCAA+777386]\n\tOrdinal0 [0x0014F1E4+1176036]\n\tOrdinal0 [0x0013EA36+1108534]\n\tOrdinal0 [0x001183C9+951241]\n\tOrdinal0 [0x00119396+955286]\n\tGetHandleVerifier [0x004F9CE2+2746722]\n\tGetHandleVerifier [0x004EA234+2682548]\n\tGetHandleVerifier [0x002DB34A+524234]\n\tGetHandleVerifier [0x002D9B60+518112]\n\tOrdinal0 [0x001E9FBC+1810364]\n\tOrdinal0 [0x001EEA28+1829416]\n\tOrdinal0 [0x001EEB15+1829653]\n\tOrdinal0 [0x001F8744+1869636]\n\tBaseThreadInitThunk [0x770EFA29+25]\n\tRtlGetAppContainerNamedObjectPath [0x77BC7A9E+286]\n\tRtlGetAppContainerNamedObjectPath [0x77BC7A6E+238]\n\t(No symbol) [0x00000000]\n","error":"unknown error","message":"unknown error: unhandled inspector error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}\n  (Session info: chrome=105.0.5195.54)"}', expected: 'Git Pocket Guide', reason: not equal
 ntent-Length: 296
 2 < Content-Type: application/json; charset=utf-8

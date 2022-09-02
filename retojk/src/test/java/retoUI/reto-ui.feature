@@ -16,11 +16,15 @@ Feature: demoQA
     * def loginBtn = '#login'
     * def goToBookBtn = '#gotoStore'
     * def selectedBook = '{a}Git Pocket Guide'
+    * def selectedBook2 = '{}Speaking JavaScript'
     * def selectBtn = '#addNewRecordButton'
     * def deleteBtn = '#delete-record-undefined'
     * def oKModal = '#closeSmallModal-ok'
     * def userBookList = "//*[@class= 'mr-2']"
+    * def emptyCell = "//div[@class= 'rt-td']"
     * def bookName = 'Git Pocket Guide'
+    * def bookName2 = 'Speaking JavaScript'
+    * def backToStore = '#addNewRecordButton'
     # input resources
     * def userName = 'juanperficient'
     * def userPwd = 'JuanPerficient0*'
@@ -29,44 +33,53 @@ Feature: demoQA
   Scenario: Karate Ramp Up Challenge UI
 
     Given driver _url+ _login
-
     And maximize()
-    * delay(tmp * 3)
     * def urlValue = driver.url
     And print 'Title ===> ', driver.title
     And match urlValue == _url + _login
     Then match driver.title == 'ToolsQA'
-
     # enter credentials (Authentication)
     When input(userNameIn, userName)
-    * delay(tmp * 1)
     And input(userPwdIn, userPwd)
-    * delay(tmp * 1)
     Then click(loginBtn)
     # going to book list
-    * delay(tmp * 1)
     When click(goToBookBtn)
-
-    * delay(tmp * 2)
     # choose a book
     And click(selectedBook)
-    * delay(tmp * 2)
-
-    * delay(tmp * 2)
     When scroll(selectBtn)
     And click('{}Add To Your Collection')
-    * delay(tmp * 1)
     And dialog(true)
     # going back
     And driver.back()
+    # matches the name of the book it just added
     Then match text(userBookList) == bookName
-    * delay(tmp * 3)
     And driver.back()
+    # Delete the chosen book
     And click(deleteBtn)
-    * delay(tmp * 1)
+    Then click(oKModal)
     Then dialog(true)
-    * delay(tmp * 5)
-    And driver.close()
+    And dialog(true)
+    # matching that deleted book does not appear
+    Then match text(emptyCell) == ''
+    # enters to store again
+    When click(goToBookBtn)
+    # chooses another book
+    When click(goToBookBtn)
+    Then click(selectedBook2)
+    And click('{}Add To Your Collection')
+    And dialog(true)
+    Then click(oKModal)
+    And click(backToStore)
+    When driver.back()
+    Then match text(userBookList) == bookName2
+    And driver.back()
+    # Delete the 2nd chosen book
+    And click(deleteBtn)
+    Then click(oKModal)
+    And dialog(true)
+    And dialog(true)
+   And driver.close()
 
 
-
+  #juanperficient
+  #JuanPerficient0*
