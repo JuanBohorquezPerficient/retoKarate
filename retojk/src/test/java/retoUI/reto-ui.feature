@@ -25,6 +25,8 @@ Feature: demoQA
     * def bookName = 'Git Pocket Guide'
     * def bookName2 = 'Speaking JavaScript'
     * def backToStore = '#addNewRecordButton'
+    * def bookName = 'Git Pocket Guide'
+
     # input resources
     * def userName = 'juanperficient'
     * def userPwd = 'JuanPerficient0*'
@@ -33,6 +35,10 @@ Feature: demoQA
   Scenario: Karate Ramp Up Challenge UI
 
     Given driver _url+ _login
+
+    And maximize()
+
+
     And maximize()
     * def urlValue = driver.url
     And print 'Title ===> ', driver.title
