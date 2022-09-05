@@ -87,5 +87,6 @@ Feature: demoQA
    And driver.close()
 
 
+  # *** credentials for UI test ***
   #juanperficient
   #JuanPerficient0*
